@@ -27,10 +27,9 @@ class Planets extends Component {
 
     componentDidMount() {
         axios('planets/').then(res => {
-            this.setState({
-                ...this.state,
-                currentPage: res.data.results
-            },() => {
+            const newState = {...this.state};
+            newState.currentPage = { results: res.data.results};
+            this.setState(newState,() => {
                 if (res.data.next) {
                     this.fetchNext(res.data.next);
                 }
@@ -40,7 +39,7 @@ class Planets extends Component {
     fetchNext(nextUrl) {
         axios(nextUrl).then(next => {
             const newState = {...this.state};
-            newState.currentPage = newState.currentPage.concat(next.data.results);
+            newState.currentPage.results = newState.currentPage.results.concat(next.data.results);
             this.setState(newState,
                 () => {
                     if(next.data.next) {
@@ -97,7 +96,7 @@ class Planets extends Component {
     }
 
     render() {
-        const planets = this.state.currentPage ? this.state.currentPage : null;
+        const planets = this.state.currentPage ? this.state.currentPage.results : null;
         const planet = this.state.currentPage && this.state.detailed !== null ? this.state.currentPage.results[this.state.detailed] : null;
         const nextBtn = <div> {this.state.nextPage ?
             <button className={'Planets-grid-next'} type="button" onClick={() => this.loadNext()}></button>
