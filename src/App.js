@@ -3,8 +3,6 @@ import { Route, Switch } from 'react-router-dom';
 import Planets from './container/Planets/Planets';
 import UnpaginatedPlanets from './container/Planets/UnPlanets';
 import home from './components/Home/Home';
-import './assets/fonts/Starjedi.ttf';
-import './assets/fonts/Starjhol.ttf';
 import './App.css';
 
 
