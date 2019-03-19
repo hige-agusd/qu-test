@@ -1,0 +1,180 @@
+.Planets-grid-wrapper {
+    background-color: #030305;
+    width: 50%;
+}
+
+.Planets-grid {
+    background-color: #030305;
+    display: grid;
+    grid: auto-flow 90px / 100px 0 0 73px 0 0 0 0 120px 50px;
+    justify-content: center;
+    width: 100%;
+}
+
+.Planets-grid > * {
+    color: #f3c20b;
+    /* border: 1px solid #fff; */
+    border-radius: 2px;
+    font-size: 12px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.Planets-grid-header-cell {
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: row;
+    font-family: 'Star Jedi Hollow';
+    justify-content: center;
+    align-items: center;
+}
+
+.Planets-grid-header-cell span {
+    display: inline!important;
+}
+
+.Planets-grid-header-cell.selected {
+    text-decoration: underline;
+}
+.Planets-grid-header-cell .arrow {
+    width: 0; 
+    height: 0; 
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    margin: 0;
+}
+
+.Planets-grid-header-cell.selected.asc .arrow {
+    border-bottom: 5px solid #f3c20b;
+}
+ 
+.Planets-grid-header-cell.selected.desc .arrow {
+    border-top: 5px solid #f3c20b;
+}
+
+.Planets-grid-cell {
+    display: flex;
+    flex-direction: row;
+    font-family: 'Star Jedi';
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.Planets-grid-navbar {
+    background: #030305;
+    display: flex;
+    flex-direction: row;
+    height: 60px;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.Planets-grid-more,
+.Planets-grid-next,
+.Planets-grid-prev {
+    align-self: center;
+    background: transparent;
+    border: none;
+}
+
+.Planets-grid-more::after,
+.Planets-grid-next::after,
+.Planets-grid-prev::after {
+    background: transparent;
+    content: "";
+    display: inline-block;
+    margin-top: 1.05em;
+    margin-left: .6em;
+    width: 24px;
+    height: 24px;
+    border-top: 4px solid #f3c20b;
+    border-right: 4px solid #f3c20b;
+    border-color: #f3c20b;
+}
+
+.Planets-grid-more,
+.Planets-grid-next {
+    justify-self: flex-end;
+    margin-right: 10px;
+}
+.Planets-grid-prev {
+    justify-self: flex-start;
+}
+
+.Planets-grid-prev::after {
+    -moz-transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+}
+.Planets-grid-more::after,
+.Planets-grid-next::after {
+    -moz-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.Planets-grid-more {
+    height: 30px;
+    margin: 0;
+    margin-right: 20px;
+    width: 30px;
+}
+
+.Planets-grid-more::after {
+    height: 20px;
+    margin: 0;
+    width: 20px;
+}
+
+
+
+@media (min-width:768px) {
+    .Planets-grid {
+        grid-template-columns: 90px 90px 80px 0 95px 115px 120px 0 120px 50px;
+    }
+    .Planets-grid > * {
+        font-size: 14px;
+    }
+    .Planets-grid-more::after,
+    .Planets-grid-next::after,
+    .Planets-grid-prev::after {
+        border-top: 8px solid;
+        border-right: 8px solid;
+        height: 30px;
+        margin-top: 10px;
+        border-color: #f3c20b;
+        width: 30px;
+    }
+    .Planets-grid-more {
+        height: 30px;
+        margin: 0;
+        margin-right: 20px;
+        width: 30px;
+    }
+    
+    .Planets-grid-more::after {
+        height: 10px;
+        margin: 0;
+        width: 10px;
+    }
+
+}
+
+@media (min-width:1024px) {
+    .Planets-grid {
+        grid-template-columns: repeat(8, 110px) auto 50px;
+    }
+    .Planets-grid > * {
+        font-size: 15px;
+    }
+}
+
+@media (min-width:1240px) {
+    .Planets-grid {
+        grid-template-columns: repeat(8, 120px) auto 50px;
+    }
+    .Planets-grid > * {
+        font-size: 16px;
+    }
+}

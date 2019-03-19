@@ -1,0 +1,199 @@
+.Planet-details {
+    background: #030305;
+    color: #f3c20b;
+    min-height: 100%;
+    width: 50%;
+}
+
+.Planet-details-grid {
+    display: grid;
+    grid-template: repeat(5, 150px) auto / repeat(4, 75px);
+    grid-gap: 10px;
+    grid-template-areas: 
+    "N N N N"
+    "A A B B"
+    "C C E E"
+    "D D H H"
+    "F F G G"
+    "I I J J";
+    justify-content: center;
+}
+
+.Planet-details-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.Planet-details-back {
+    align-self: center;
+    background: transparent;
+    border: none;
+    height: 30px;
+    justify-content: flex-start;
+    margin: 10px 0 0 10px;
+    width: 30px;
+}
+
+.Planet-details-name {
+    align-self: center;
+    font-family: 'Star Jedi Hollow';
+    font-size: 35px;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.Planet-details-back::after {
+    background: transparent;
+    content: "";
+    display: inline-block;
+    border-top: 4px solid #f3c20b;
+    border-right: 4px solid #f3c20b;
+    border-color: #f3c20b;
+    margin: 0;
+    -moz-transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+    height: 20px;
+    margin: 0;
+    width: 20px;
+}
+
+
+.Planet-details-grid .Planet-details-header:nth-child(1) {
+    grid-area: N;
+}
+
+.Planet-details-grid .Planet-details-item:nth-child(2) {
+    grid-area: A;
+}
+
+.Planet-details-grid .Planet-details-item:nth-child(3) {
+    grid-area: B;
+}
+
+.Planet-details-grid .Planet-details-item:nth-child(4) {
+    grid-area: C;
+}
+
+.Planet-details-grid .Planet-details-item:nth-child(5) {
+    grid-area: D;
+}
+
+.Planet-details-grid .Planet-details-item:nth-child(6) {
+    grid-area: E;
+}
+
+.Planet-details-grid .Planet-details-item:nth-child(7) {
+    grid-area: F;
+}
+
+.Planet-details-grid .Planet-details-item:nth-child(8) {
+    grid-area: G;
+}
+
+.Planet-details-grid .Planet-details-item:nth-child(9) {
+    grid-area: H;
+}
+
+.Planet-details-grid .Planet-details-item:nth-child(10) {
+    grid-area: I;
+}
+
+.Planet-details-grid .Planet-details-item:nth-child(11) {
+    grid-area: J;
+}
+
+.Planet-details-item {
+    border: 1px solid #f3c20b;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 133px 2px rgba(204,204,204,0.61);
+    -moz-box-shadow: 0px 0px 133px 2px rgba(204,204,204,0.61);
+    box-shadow: 0px 0px 133px 2px rgba(204,204,204,0.61);
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+.Planet-details-item .Planet-details-label {
+    font-family: 'Star Jedi Hollow';
+    justify-self: flex-start;
+}
+
+.Planet-details-item .Planet-details-detail {
+    font-family: 'Star Jedi';
+    justify-self: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.Planet-details-item .Planet-details-detail li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.Planet-details-item .Planet-details-detail li::before {
+    font-family: 'Star Jedi Icons';
+    content: '#';
+    margin-right: 10px;
+    margin-top: 3px;
+}
+
+@media (min-width:768px) {
+    .Planet-details-grid {
+        display: grid;
+        grid-template: repeat(5, 150px) auto / repeat(4, 180px);
+        grid-gap: 10px;
+        grid-template-areas: 
+        "N N N N"
+        "A A B B"
+        "C C E E"
+        "F D H H"
+        "F D G G"
+        "I I J J";
+        justify-content: center;
+    }
+    .Planet-details-item .Planet-details-detail {
+        font-size: 23px;
+    }
+}
+@media (min-width:1024px) {
+    .Planet-details-grid {
+        display: grid;
+        grid-template: repeat(5, 150px) auto / 100px repeat(5, 200px);
+        grid-gap: 10px;
+        grid-template-areas: 
+        "N N N N N N"
+        ". A A B B ."
+        ". C C E E ."
+        ". F D H H ."
+        ". F D G G ."
+        ". I I J J .";
+        justify-content: start;
+
+    }
+    .Planet-details-item .Planet-details-detail {
+        font-size: 23px;
+    }    
+}
+
+@media (min-width:1240px) {
+    .Planet-details-grid {
+        display: grid;
+        grid-template: repeat(5, 150px) auto / repeat(6, 200px);
+        grid-gap: 10px;
+        grid-template-areas: 
+        "N N N N N N"
+        ". A A B B ."
+        ". C C E E ."
+        ". F D H H ."
+        ". F D G G ."
+        ". I I J J .";
+        justify-content: start;
+
+    }
+    .Planet-details-item .Planet-details-detail {
+        font-size: 24px;
+    }    
+}

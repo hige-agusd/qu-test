@@ -1,5 +1,32 @@
+@font-face {
+  font-family: 'Star Jedi Hollow';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./assets/fonts/SF Distant Galaxy AltOutline.ttf'); 
+  src: local('Star Jedi Hollow'), local('Star Jedi Hollow'),
+       url('./assets/fonts/SF Distant Galaxy AltOutline.ttf') format('truetype'), /* Safari, Android, iOS */
+}
+@font-face {
+  font-family: 'Star Jedi';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./assets/fonts/SF\ Distant\ Galaxy\ Alternate.ttf'); 
+  src: local('Star Jedi Hollow'), local('Star Jedi Hollow'),
+       url('./assets/fonts/SF\ Distant\ Galaxy\ Alternate.ttf') format('truetype'), /* Safari, Android, iOS */
+}
+@font-face {
+  font-family: 'Star Jedi Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./assets/fonts/Starjedi.ttf'); 
+  src: local('Star Jedi Hollow'), local('Star Jedi Hollow'),
+       url('./assets/fonts/Starjedi.ttf') format('truetype'), /* Safari, Android, iOS */
+}
 .App {
+  height: 100%;
+  overflow-x: hidden;
   text-align: center;
+  width: 100%;
 }
 
 .App-logo {
