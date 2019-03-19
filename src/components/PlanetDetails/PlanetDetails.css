@@ -140,7 +140,7 @@
 }
 .Planet-details-item .Planet-details-detail li::before {
     font-family: 'Star Jedi Icons';
-    content: '#';
+    content: '^';
     margin-right: 10px;
     margin-top: 3px;
 }

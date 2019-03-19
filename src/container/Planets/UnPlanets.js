@@ -15,8 +15,6 @@ class Planets extends Component {
         super(props);
         this.state = {
             currentPage: null,
-            nextPage: null,
-            prevPage: null,
             details: false,
             detailed: null,
             sort: {
@@ -31,49 +29,26 @@ class Planets extends Component {
         axios('planets/').then(res => {
             this.setState({
                 ...this.state,
-                currentPage: res.data
+                currentPage: res.data.results
+            },() => {
+                if (res.data.next) {
+                    this.fetchNext(res.data.next);
+                }
             });
-            if (res.data.next) {
-                this.fetchNext(res.data.next);
-            }
-            if (res.data.previous) {
-                this.fetchPrevious(res.data.previous);
-            }
-
         })
     }
     fetchNext(nextUrl) {
-        axios(nextUrl).then(next =>
-            this.setState({
-                ...this.state,
-                nextPage: next.data
-            }));
-    }
-    fetchPrevious(prevUrl) {
-        if (!prevUrl) return -1;
-        axios(prevUrl).then(previous =>
-            this.setState({
-                ...this.state,
-                prevPage: previous.data
-            }));
-    }
-    loadNext() {
-        const newState = { ...this.state };
-        this.setState({
-            ...newState,
-            prevPage: newState.currentPage,
-            currentPage: newState.nextPage,
-            nextPage: null
-        }, () => this.fetchNext(this.state.currentPage.next));
-    }
-    loadPrev() {
-        const newState = { ...this.state };
-        this.setState({
-            ...newState,
-            nextPage: newState.currentPage,
-            currentPage: newState.prevPage,
-            prevPage: null
-        }, () => this.fetchPrevious(this.state.currentPage.previous));
+        axios(nextUrl).then(next => {
+            const newState = {...this.state};
+            newState.currentPage = newState.currentPage.concat(next.data.results);
+            this.setState(newState,
+                () => {
+                    if(next.data.next) {
+                        this.fetchNext(next.data.next);
+                    }
+                }
+            );
+        });
     }
     sort(sort) {
         this.setState({
@@ -122,7 +97,7 @@ class Planets extends Component {
     }
 
     render() {
-        const planets = this.state.currentPage ? this.state.currentPage.results : null;
+        const planets = this.state.currentPage ? this.state.currentPage : null;
         const planet = this.state.currentPage && this.state.detailed !== null ? this.state.currentPage.results[this.state.detailed] : null;
         const nextBtn = <div> {this.state.nextPage ?
             <button className={'Planets-grid-next'} type="button" onClick={() => this.loadNext()}></button>
@@ -137,7 +112,7 @@ class Planets extends Component {
                 <div ref={this.myRef} className={`Planets-content-wrapper ${this.state.details ? 'details' : ''}`}>
                     <Link to="/"><div className={'Planets-grid-prev Back-home'}></div></Link>
                     <div ></div>
-                    {planets ? 
+                    {planets ?
                     <div className={'Planets-grid-wrapper'} >
                         <div className={'Planets-grid'} >
                             <PlanetsHeader sort={this.state.sort} onSort={(sort) => this.sort(sort)} />
