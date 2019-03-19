@@ -18,13 +18,13 @@ const planetsHeader = props => {
     };
     
     const columns = COLUMNS.map(column => {
-        const classes = ['Planets-grid-header-cell'];
+        const classes = ['Planets-grid-header-cell', column];
         if (column === props.sort.key) {
             classes.push('selected');
             classes.push(props.sort.dir ? (props.sort.dir === SORT.ASC ? 'asc' : 'desc') : '');
         }
         return (
-            <div className={classes.join(' ')} 
+            <div className={classes.join(' ')} key={`head-${column}`} 
                 onClick={() => setSort(`${column}`)}><span>{column.split('_').join(' ')}</span>
                 <div className={'arrow'}></div>
             </div>

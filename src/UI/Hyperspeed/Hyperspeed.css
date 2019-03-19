@@ -3,24 +3,6 @@
     background-size: cover;
   }
   
-  html, body{
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-  }
-  
-  body{
-    background: #000;
-    text-align: center;
-  }
-  
-  body:before{
-    content: '';
-    display: inline-block;
-    height: 100%;
-    vertical-align: middle;
-  }
-  
   .scene{
     display: inline-block;
     vertical-align: middle;

@@ -1,23 +1,24 @@
 import React from 'react';
+import './Hyperspeed.css';
 
 const hyperspeed = props => (
-    <div class="scene">
-  <div class="wrap">
-    <div class="wall wall-right"></div>
-    <div class="wall wall-left"></div>
-    <div class="wall wall-top"></div>
-    <div class="wall wall-bottom"></div>
-    <div class="wall wall-back"></div>
+  <div className={'scene'}>
+    <div className={'wrap'}>
+      <div className={'wall wall-right'}></div>
+      <div className={'wall wall-left'}></div>
+      <div className={'wall wall-top'}></div>
+      <div className={'wall wall-bottom'}></div>
+      <div className={'wall wall-back'}></div>
+    </div>
+    <div className={'wrap'}>
+      <div className={'wall wall-right'}></div>
+      <div className={'wall wall-left'}></div>
+      <div className={'wall wall-top'}></div>
+      <div className={'wall wall-bottom'}></div>
+      <div className={'wall wall-back'}></div>
+    </div>
+
   </div>
-  <div class="wrap">
-    <div class="wall wall-right"></div>
-    <div class="wall wall-left"></div>
-    <div class="wall wall-top"></div>
-    <div class="wall wall-bottom"></div>
-    <div class="wall wall-back"></div>
-  </div>
-  
-</div>
 );
 
 export default hyperspeed;

@@ -3,6 +3,7 @@
     color: #f3c20b;
     min-height: 100%;
     width: 50%;
+    overflow: hidden;
 }
 
 .Planet-details-grid {
@@ -17,6 +18,9 @@
     "F F G G"
     "I I J J";
     justify-content: center;
+    position: relative;
+    top: 0;
+    left: 0;
 }
 
 .Planet-details-header {
@@ -106,6 +110,7 @@
 }
 
 .Planet-details-item {
+    background-color: #030305;
     border: 1px solid #f3c20b;
     border-radius: 5px;
     -webkit-box-shadow: 0px 0px 133px 2px rgba(204,204,204,0.61);
@@ -140,6 +145,46 @@
     margin-top: 3px;
 }
 
+.Planet-detail-water-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.Planet-detail-lightsaber {
+    background-image: url('../../assets/images/lightsaber-handle.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: inline-block;
+    position: relative;
+    height: 20px;
+    width: 70px;
+}
+
+.Planet-detail-water-border {
+    border: 1px solid #4CAF50;
+    margin-left: -20px;
+    width: 110px;
+    height: 10px;
+    line-height: 10px;
+    color: #000!important;
+    background-color: #030305!important;
+}
+
+.Planet-detail-bar {
+    color: #fff!important;
+    background-color: #4CAF50!important;
+    height: 10px;
+    text-align: center!important;
+}
+
+.Planet-detail-water-value {
+    color: #eee;
+    height: 10px;
+    position: absolute;
+}
+
 @media (min-width:768px) {
     .Planet-details-grid {
         display: grid;
@@ -156,6 +201,22 @@
     }
     .Planet-details-item .Planet-details-detail {
         font-size: 23px;
+    }
+    .Planet-detail-lightsaber {
+        height: 50px;
+        width: 150px;
+    }
+    
+    .Planet-detail-water-border {
+        margin-left: -20px;
+        width: 200px;
+        height: 22px;
+        line-height: 25px;
+        background-color: #030305!important;
+    }
+
+    .Planet-detail-bar {
+        height: 22px;
     }
 }
 @media (min-width:1024px) {
@@ -196,4 +257,15 @@
     .Planet-details-item .Planet-details-detail {
         font-size: 24px;
     }    
+    .Planet-detail-lightsaber {
+        height: 45px;
+        width: 120px;
+    }
+    
+    .Planet-detail-water-border {
+        margin-left: -20px;
+        width: 240px;
+        background-color: #030305!important;
+    }
+        
 }
