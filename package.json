@@ -1,5 +1,6 @@
 {
-  "name": "qu-test",
+  "name": "star-wars-atlas",
+  "homepage" : "http://hige-agusd.github.io/starwars-atlas",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
